@@ -19,14 +19,14 @@ post '/' do
   @todo_tweet = []
   client = my_twitter_client() 
   @name = params[:firstname] || ''
-  #@number = params[:n].to_i
-  #@number = 1 if @number <= 0
+  @number = params[:n].to_i
+  @number = 1 if @number <= 0
   if client.user? @name 
     #ultimos_t = client.user_timeline(@name,{:count=>@number.to_i})
     #@todo_tweet =(@todo_tweet != '') ? ultimos_t.map{ |i| i.text} : ''
 
     @usuario = Hash.new
-    siguiendo = client.friend_ids(@name).attrs[:ids].take(10)
+    siguiendo = client.friend_ids(@name).attrs[:ids].take(@number)
     puts "ID amigos a comparar #{siguiendo}"
     siguiendo.each do |sig|
       usu = client.user(sig) 
