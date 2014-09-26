@@ -1,6 +1,3 @@
-# Nombre: Eduardo Javier Acuña Ledesma
-# Fecha: 24 de septiembre de 2014
-# Email: alu0100302479@ull.edu.es
 
 # -*- coding: utf-8 -*-
 require 'twitter'
@@ -33,7 +30,7 @@ post '/' do
       begin
       if (usu.protected.to_s != "true") #Mientras no sea un usuario protegido
          @usuario[usu.screen_name.to_s] = usu.followers_count #Usuario X tiene tantos seguidores
-	 puts "#{usu.screen_name.to_s} tiene #{usu.followers_count} followers" 
+	 puts "#{usu.screen_name.to_s} cuenta con #{usu.followers_count} followers" 
       end
       rescue
          puts "Se ha producido un error por favor intentelo de nuevo"
