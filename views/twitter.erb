@@ -104,7 +104,7 @@
 
 			<% if @name != ''%>
 
-				<p>Populares :</p>
+				<p>Listado:</p>
 				<ol>
 					<% @usuario.sort_by {|k,v| -v}.each {|twittero, seguidores| %>
 						<li id="col"><%= twittero %>: <%= seguidores %></li>
